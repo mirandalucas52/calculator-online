@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    background-color: rgb(0, 0, 0);
+    --primary-color: #2e2e2e;
+    --red-color: #ff7f7f;
+    --button-color: #333;
+    --buttons-bg: rgb(51, 51, 51)
+        linear-gradient(0deg, rgba(51, 51, 51, 1) 0%, rgba(43, 43, 43, 1) 100%);
+    --green-color: hsl(133, 57%, 59%);
+    --font-color: #fff;
+    --button-hover: #444;
+    --operator: #5fa1d7;
+    --ac: #8b46b3;
+    --bg: #242424;
+    --shadow: #00000026;
+}
+
+.dark-theme {
+    background-color: rgb(0, 0, 0);
+    --primary-color: #2e2e2e;
+    --red-color: #ff7f7f;
+    --button-color: #333;
+    --buttons-bg: rgb(51, 51, 51)
+        linear-gradient(0deg, rgba(51, 51, 51, 1) 0%, rgba(43, 43, 43, 1) 100%);
+    --green-color: hsl(133, 57%, 59%);
+    --font-color: #fff;
+    --button-hover: #444;
+    --operator: #5fa1d7;
+    --ac: #8b46b3;
+    --bg: #242424;
+    --shadow: #00000026;
+}
+
+.light-theme {
+    background-color: #ffffff;
+    --primary-color: #fff;
+    --red-color: #e18989;
+    --button-color: #f7f7f7;
+    --buttons-bg: rgb(255, 255, 255)
+        linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(249, 249, 249, 1) 100%
+        );
+    --green-color: hsl(133, 57%, 59%);
+    --font-color: #000e1a;
+    --button-hover: #f2f2f2;
+    --operator: #98c5e6;
+    --ac: #b76cd0;
+    --bg: #f5f3f3;
+    --shadow: #61616126;
+}
+
+.pastel-theme {
+    background-color: #f5c8bd;
+    --primary-color: #f5c8bd;
+    --red-color: #a5b0f0;
+    --button-color: rgb(255, 255, 255);
+    --buttons-bg: #f5c8bd linear-gradient(0deg, #f5c8bd 0%, #f5c8bd 100%);
+    --green-color: hsl(133, 50%, 77%);
+    --font-color: #b586c1;
+    --button-hover: #f4f4f4;
+    --operator: #ffa6ea;
+    --ac: #e1b9f8;
+    --bg: #a9eca2;
+    --shadow: #00000026;
+}
+
+.blue-theme {
+    background-color: #398bff;
+    --primary-color: #398bff;
+    --red-color: #00a6ff;
+    --button-color: #c5dbfb;
+    --buttons-bg: #398bff linear-gradient(0deg, #398bff 0%, #3886f3 100%);
+    --green-color: hsl(235, 80%, 55%);
+    --font-color: #fff;
+    --button-hover: #b5cbed;
+    --operator: #3882dc;
+    --ac: #626fe2;
+    --bg: rgb(31, 113, 168);
+    --shadow: #26204130;
+}
+
+.pink-theme {
+    background-color: #de25bf;
+    --primary-color: #de25bf;
+    --red-color: #ce088c;
+    --button-color: #ffb1f2;
+    --buttons-bg: #de25bf linear-gradient(0deg, #d825bb 0%, #d824ba 100%);
+    --green-color: hsl(288, 80%, 61%);
+    --font-color: #fff;
+    --button-hover: #f0a9e4;
+    --operator: #dc4c8a;
+    --ac: #ac61d7;
+    --bg: #c72aad;
+    --shadow: #00000026;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+}
+
+h1 {
+    margin-bottom: 2.5rem;
+    color: var(--font-color);
+    text-shadow: 5px 5px 0px var(--shadow);
+    font-size: 1.9rem;
+}
+
+.container {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 0px 0px;
+    background: var(--primary-color);
+    box-shadow: 10px 10px 0px var(--shadow);
+}
+
+input[type="text"]:focus {
+    caret-color: transparent;
+}
+.display {
+    height: 80px;
+    width: 100%;
+    outline: none;
+    border: none;
+    text-align: right;
+    font-size: 25px;
+    color: var(--font-color);
+    pointer-events: none;
+    padding: 0 1rem;
+    font-weight: 600;
+    background-color: var(--primary-color);
+}
+.buttons {
+    display: grid;
+    grid-gap: 10px;
+    background: var(--buttons-bg);
+    border-radius: 12px;
+    padding: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+.buttons button {
+    box-shadow: 3px 3px 0px var(--shadow);
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: var(--button-color);
+    color: var(--font-color);
+    transition: 0.1s;
+}
+.buttons button:active {
+    transform: translateX(3px) translateY(3px);
+    box-shadow: 0px 0px 0px var(--shadow);
+}
+
+.buttons button:hover {
+    background: var(--button-hover);
+}
+.buttons .operator {
+    color: var(--operator);
+    font-weight: 600;
+}
+
+.buttons .ac {
+    color: var(--ac);
+}
+
+.buttons .eq {
+    color: var(--green-color);
+}
+
+.buttons .red {
+    color: var(--red-color);
+}
+
+#choose-theme {
+    padding: 0.7rem 1.7rem;
+    border-radius: 50px;
+    border: none;
+    color: var(--font-color);
+    background-color: var(--button-color);
+    box-shadow: 3px 5px 0px var(--shadow);
+    cursor: pointer;
+}
+
+#choose-theme:hover {
+    background-color: var(--button-hover);
+}
+.themes {
+    opacity: 0;
+    transition: 0.5s;
+    transform: scale(0);
+}
+
+.active {
+    opacity: 1;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    transform: scale(1);
+}
+
+.themes button {
+    width: 49px;
+    height: 49px;
+    margin: 5px;
+    border: none;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.172);
+    transition: 0.5s;
+}
+
+.themes button:hover {
+    transform: translateY(-5px);
+}
